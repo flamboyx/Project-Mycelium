@@ -53,6 +53,7 @@ body {
 .layer-6 {
 	transform: translateZ(380px);
 }
+
 .hero-content {
 	font-size: calc(var(--index) * 2.9);
 	text-align: center;
@@ -60,9 +61,6 @@ body {
 	letter-spacing: calc(var(--index) * -.15);
 	line-height: 1.35em;
 	margin-top: calc(var(--index) * 5.5);
-}
-.hero-content span {
-	display: block;
 }
 
 .button-start {
@@ -109,6 +107,6 @@ body {
 	
 	
   }
-.layer-4, .layer-5, .layer-6 {
+.layer-4, .layer-5 {
 	pointer-events: none;
 }
