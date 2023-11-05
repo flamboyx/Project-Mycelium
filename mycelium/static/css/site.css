@@ -1,112 +1,336 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
 :root {
-	--index: calc(1vw + 1vh);
-	--transition: 1.5s cubic-bezier(.05, .5, 0, 1);
+  --index: calc(1vw + 1vh);
 }
 
 body {
-	background-color: #000;
-	color: #fff;
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  background-color: #261d2a;
+  font-family: monospace;
+  overflow:hidden;
 }
 
-.layers {
-	perspective: 1000px;
-	overflow: hidden;
-}
-.layers__container {
-	height: 100vh;
-	min-height: 500px;
-	transform-style: preserve-3d;
-	transform: rotateX(var(--move-y)) rotateY(var(--move-x));
-	will-change: transform;
-	transition: transform var(--transition);
-}
-.layers__item {
-	position: absolute;
-	inset: -5vw;
-	background-size: cover;
-	background-position: center;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.layer-1 {
-	transform: translateZ(-55px) scale(1.06);
-}
-.layer-2 {
-	transform: translateZ(80px) scale(.88);
-}
-.layer-3 {
-	transform: translateZ(180px) scale(.8);
-}
-.layer-4 {
-	transform: translateZ(190px) scale(.9);
-}
-.layer-5 {
-	transform: translateZ(300px) scale(.9);
-}
-.layer-6 {
-	transform: translateZ(380px);
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  width: 100%;
+  background: none;
 }
 
-.hero-content {
-	font-size: calc(var(--index) * 2.9);
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: calc(var(--index) * -.15);
-	line-height: 1.35em;
-	margin-top: calc(var(--index) * 5.5);
+/*
+
+HERE WE MADE:
+1. the title of our site
+2. icon
+2. box with nickname and login button
+
+status: DONE
+
+*/
+.icon{
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 80px;
+  margin-top: 2px;
+}
+.form-box{
+  position: fixed;
+  width: 380px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.121);
+  border: 2px solid rgb(211, 166, 175);
+  border-radius: 20px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  transition: transform .3s;
 }
 
-.button-start {
-	font-family: sans-serif;
-	font-weight: 800;
-	text-transform: uppercase;
-	font-size: calc(var(--index) * .71);
-	letter-spacing: -.02vw;
-	padding: calc(var(--index) * .7) calc(var(--index) * 1.25);
-	background: none;
-	border: rgb(255, 255, 255) 3px solid;
-	border-radius: 20px;
-	color: #ffffff;
-	outline: none;
-	cursor: pointer;
-	margin-top: calc(var(--index) * 2.5);
-	transition: transform .9s;
+.form-box:hover {
+  transform: scale(1.02);
 }
-.button-start:hover {
-	font-size:0;
-	border: none;
-	border-radius: none;
-	color: none;
-	transition: transform .6s;
-	transform: scale(1.3);
+
+h1{
+  font-size: 2em;
+  color: rgb(211, 166, 175);
+  text-align: center;
+}
+
+.inputbox {
+  position: relative;
+  margin: 30px 0;
+  width:  310px;
+  border-bottom: 2px solid rgb(211, 166, 175);
+}
+
+.inputbox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: rgb(211, 166, 175);
+  font-size: 1em;
+  pointer-events: none;
+  transition: .5s;
+}
+
+input:focus ~ label,
+input:focus ~ :valid{
+  top: -5px;
+}
+
+.inputbox input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: rgb(211, 166, 175);
+  padding: 0 35px 0 5px;
+}
+
+button{
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  background:  rgb(211, 166, 175);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.Top {
+  height: 100vh;
+  display: flex;
+  top: 30px;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.Top_Text {
+  z-index: 1;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: rgb(211, 166, 175);
+}
+
+.TextSub {
+  font-size: calc(var(--index) * 2);
+  letter-spacing: calc(var(--index) / 5);
+}
+.TextMain {
+  font-size: calc(var(--index) * 0.8);
+  letter-spacing: calc(var(--index) / 5);
+}
+
+.zoomButtonPlay{
+  transition: transform .1s;
+  margin: 0 auto;
+}
+
+.zoomButtonPlay:hover {
+  transform: scale(1.1);
+}
+
+
+
+/*
+
+HERE WE MADE:
+box with customization (skins)
+
+status: NOT COMPLATELY DONE
+*/
+h3{
+  font-size: 2em;
+  color: rgb(211, 166, 175);
+  text-align: center;
+}
+
+.form-boxCustom{
+  position: fixed;
+  width: 380px;
+  height: 300px;
+  margin-right: 800px;
+  background: rgba(255, 255, 255, 0.121);
+  border: 2px solid rgb(211, 166, 175);
+  border-radius: 20px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  transition: transform .3s;
+}
+.form-boxCustom:hover {
+  transform: scale(1.02);
+}
+
+/*
+
+HERE WE MADE:
+settings (music, maybe etc)
+
+status: NOT COMPLATELY DONE
+*/
+h2{
+  padding: 58px;
+  font-size: 2em;
+  color: rgb(211, 166, 175);
+  text-align: center;
+}
+
+.form-boxSet{
+  position: fixed;
+  width: 380px;
+  height: 300px;
+  margin-left: 800px;
+  background: rgba(255, 255, 255, 0.121);
+  border: 2px solid rgb(211, 166, 175);
+  border-radius: 20px;
+  justify-content: center;
+  display: flex;
+  transition: transform .3s;
+}
+
+.form-boxSet:hover {
+  transform: scale(1.02);
+}
+
+.soundbutton {
+  user-select: none;
+  position: absolute;
+  padding: 120px;
+  height: 70px;
+  cursor: pointer;
+}
+
+
+.soundbutton.paused {
+	opacity: .25;
+}
+
+
+/*
+
+HERE WE MADE:
+animation of the background
+
+status: DONE 
+(maybe change the animation to a different one)
+
+*/
+.glowing {
+  position: absolute;
+  min-width: 700px;
+  height: 550px;
+  margin: -150px;
+  transform-origin: right;
+  animation: colorChange 5s linear infinite;
+}
+
+.glowing:nth-child(even) {
+  transform-origin: left;
+}
+
+@keyframes colorChange {
+  0% {
+    filter: hue-rotate(0deg);
+    transform: rotate(0deg);
   }
-  .button-start:hover::after{
-	content: attr(data-hover);
-	font-family: sans-serif;
-	font-weight: 800;
-	text-transform: uppercase;
-	font-size: calc(var(--index) * .71);
-	letter-spacing: -.02vw;
-	padding: calc(var(--index) * .7) calc(var(--index) * 1.25);
-	background: white;
-	border: rgb(255, 255, 255) 3px solid;
-	border-radius: 20px;
-
-	
-	color: rgb(0, 48, 95) ;
-	outline: none;
-	cursor: pointer;
-	margin-top: calc(var(--index) * 2.5);
-	
-	
+  100% {
+    filter: hue-rotate(360deg);
+    transform: rotate(360deg);
   }
-.layer-4, .layer-5 {
-	pointer-events: none;
+}
+
+.glowing span {
+  position: absolute;
+  top: calc(80px * var(--i));
+  left: calc(80px * var(--i));
+  bottom: calc(80px * var(--i));
+  right: calc(80px * var(--i));
+}
+
+.glowing span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.glowing span:nth-child(3n + 1)::before {
+  background: rgba(134,255,0,1);
+  box-shadow: 0 0 20px rgba(134,255,0,1),
+    0 0 40px rgba(134,255,0,1),
+    0 0 60px rgba(134,255,0,1),
+    0 0 80px rgba(134,255,0,1),
+    0 0 0 8px rgba(134,255,0,.1);
+}
+
+.glowing span:nth-child(3n + 2)::before {
+  background: rgba(255,214,0,1);
+  box-shadow: 0 0 20px rgba(255,214,0,1),
+    0 0 40px rgba(255,214,0,1),
+    0 0 60px rgba(255,214,0,1),
+    0 0 80px rgba(255,214,0,1),
+    0 0 0 8px rgba(255,214,0,.1);
+}
+
+.glowing span:nth-child(3n + 3)::before {
+  background: rgba(0,226,255,1);
+  box-shadow: 0 0 20px rgba(0,226,255,1),
+    0 0 40px rgba(0,226,255,1),
+    0 0 60px rgba(0,226,255,1),
+    0 0 80px rgba(0,226,255,1),
+    0 0 0 8px rgba(0,226,255,.1);
+}
+
+.glowing span:nth-child(3n + 1) {
+  animation: animate 10s alternate infinite;
+}
+
+.glowing span:nth-child(3n + 2) {
+  animation: animate-reverse 3s alternate infinite;
+}
+
+.glowing span:nth-child(3n + 3) {
+  animation: animate 8s alternate infinite; 
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-reverse {
+  0% {
+    transform: rotate(360deg);
+  }
+  
+  50% {
+    transform: rotate(180deg);
+  }
+  
+  100% {
+    transform: rotate(0deg);
+  }
 }

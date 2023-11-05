@@ -6,3 +6,12 @@ document.addEventListener('mousemove', e => {
 		`
 	})
 })
+const playButton = document.getElementById('playButton');
+const videoContainer = document.getElementById('videoContainer');
+const videoPlayer = document.getElementById('videoPlayer');
+
+playButton.addEventListener('click', function() {
+  videoContainer.style.display = 'flex';
+  videoPlayer.play();
+});
+
