@@ -7,4 +7,7 @@ def index(request):
 def mew(request):
     return render(request, 'main/mew.html')
 
+def game(request):
+    return render(request, 'main/Game.html')
+
     

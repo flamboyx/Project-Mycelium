@@ -14,4 +14,3 @@ playButton.addEventListener('click', function() {
   videoContainer.style.display = 'flex';
   videoPlayer.play();
 });
-

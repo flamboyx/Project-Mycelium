@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+
+  <title>My beautiful cave</title>
+
+  {% load static %}
+  <link rel="stylesheet" href="{%static 'css/Game.css'%}">
+  <script src="{%static 'js/Game.js'%}" defer></script>
+
+</head>
+
+<body>
+  <div id="game-board"></div>
+  
+  <div id="rectangle">
+    <div class="cover">
+
+      <button class="left" onclick="leftScroll()">Left</button>
+
+      <div class="scroll-images">
+
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+       
+      </div>
+
+      <button class="right" onclick="rightScroll()">Right</button>
+
+    </div>
+  </div>
+  
+  <div class="Cave">
+    <div class="Dec" style="background-image: url({%static 'imgGame/Decoration.png'%});"></div>
+    <div class="Back" style="background-image: url({%static 'imgGame/Backgroumd.png'%});"></div>"
+  </div>
+  </div>
+  
+</body>
+
+</html>
