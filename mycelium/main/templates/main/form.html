@@ -1,0 +1,70 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/form-style.css'%}">
+    <script src="{% static 'js/form-script.js'%}" defer></script>   
+</head>
+
+<body>
+    <div id="container">
+        <div id="authorize">
+            <section class="autho_item">
+                <h2 class="autho_title">У вас уже есть аккаунт?</h2>
+                <button id="signin_btn" class="autho_btn">Войти</button>
+            </section>
+            <section class="autho_item">
+                <h2 class="autho_title">У вас нет аккаунта?</h2>
+                <button id="signup_btn" class="autho_btn">Зарегистрироваться</button>
+            </section>
+        </div>
+
+        <div class="form_box">
+                
+        
+            <form action="#" id="form_signin" class="form" method="post">
+                <h3 class="form_title">Вход</h3>
+                <p>
+                    <input type="text" name="nickname" class="form-input" placeholder="Логин">
+                </p>
+                <p>
+                    <input type="password" name="password" class="form-input" placeholder="Пароль">
+                </p>
+                <p id="signin_error" class="error"></p>
+                <p>
+                    <input type="submit" id="form_signin_btn" class="form_btn" value="Войти">
+                </p>
+            </form>
+          
+
+            <form action="{% url 'register'%}" id="form_signup" class="form" method="post">
+                
+                <h3 class="form_title">Регистрация</h3>
+                {% csrf_token %}
+                {{form.as_p}}
+                <!--
+                <p>
+                    <input type="text" name="nickname" class="form_input" placeholder="Логин">
+                </p>
+                <p>
+                    <input type="password" name="password" class="form_input" placeholder="Пароль">
+                </p>
+                <p>
+                    <input type="password" name="repass" class="form_input" placeholder="Повторите пароль">
+                </p>
+                <p id="signup_error" class="error"></p>
+            -->
+                <p>
+                    <input type="submit" id="form_signup_btn" class="form_btn" value="Зарегистрироваться">
+                </p>
+                 
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
