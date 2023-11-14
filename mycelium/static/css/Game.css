@@ -3,15 +3,19 @@
   padding: 0;
   box-sizing: border-box;
 }
+/*
+ 
+  */
 
 body {
   color: #fff;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  overflow: hidden; 
+  font-family: system-ui;
+  /*overflow: hidden;
+  */
 }
 
 #game-board {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   width: 500px;
   height: 500px;
@@ -24,6 +28,7 @@ body {
   left: 0;
   right: 0;
   margin-top: 250px;
+ 
 }
 
 #rectangle {
@@ -31,18 +36,17 @@ body {
   margin-right: auto;
   left: 0;
   right: 0;
-  top: 400px;
-  max-width: 1360px;
-  min-width: 200px;
-  height: 240px;
+  top: 5px;
+  height: 200px;
   position: absolute;
   z-index: 3;
   display: none;
-  background-color: rgba(102, 102, 108, 0.352);
+  background-color: rgba(198, 198, 215, 0.352);
   border: rgb(18, 25, 37) 3px solid;
   border-radius: 20px 20px 20px 20px;
-
 }
+
+
 
 .square {
   width: 70px;
@@ -51,8 +55,7 @@ body {
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
-  cursor: pointer;
-  background-image: url("/static/imgGame/Flour.png");
+  background-image: url(../../static/imgGame/Flour.png);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -61,8 +64,7 @@ body {
 }
 
 .square:hover {
-  background-image: url("/static/imgGame/FlourHover.png");
-
+  background-image: url(../../static/imgGame/FlourHover.png);
 }
 
 #child:last-child {
@@ -92,35 +94,44 @@ body {
   display: flex;
   flex-flow: row;
   justify-content: flex-start;
+  transition: transform .3s;
 }
 
 .child {
+  cursor: pointer;
   z-index: 5;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   background-size: cover;
   background-position: center;
-  background-color: rgb(41, 44, 44);
-  border: 10px plum;
+  background-color: rgb(178, 178, 193);
+  border-radius: 10px;
   box-sizing: border-box;
   margin-right: 24px;
-  background-image: url("/sh.pngstatic/imgGame/Mu");
   margin-top: 20px;
-  pointer-events: none;
+  
+}
+.scroll-images:hover {
+  transform: scale(1.01);
 }
 
-.left {
+#WOW{
+  display: none;
   position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+  z-index: 9999;
+  width: 100px;
+  height: 100px;
+  top: 500px;
+  left: 1000px;
+  background-size: cover;
+  background-position: center;
 
-.right {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+}
+.child img{
+  
+  object-fit:contain ;
+  width: 100%;
+  height: 100%; 
 }
 
 
@@ -164,4 +175,178 @@ body {
   height: 100%;
   z-index: -1;
   pointer-events: none;
+}
+
+#currency{
+  z-index: 10;
+  position: absolute;
+  margin-top: 550px;
+  margin-left: 35px;
+  background-color: rgb(64, 66, 87);
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  width: 140px;
+  height: 120px;
+  cursor: pointer;
+  box-shadow: 5px 5px 0px 1px rgba(0, 0, 0, 0.2);
+  transition: transform .3s;
+
+  align-items: center;
+
+}
+
+
+.currency-icon {
+  margin-right: 5px;
+}
+
+.currency-amount {
+  background-color: #f1f1f153;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#nickname{
+  z-index: 10;
+  position: absolute;
+  margin-top: 505px;
+  margin-left: 35px;
+  background-color: rgb(64, 66, 87);
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  width: 140px;
+  height: 30px;
+  cursor: pointer;
+  box-shadow: 5px 5px 0px 1px rgba(0, 0, 0, 0.2);
+  transition: transform .3s;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+#build{
+  z-index: 10;
+  position: absolute;
+  margin-top: 520px;
+  margin-left: 1200px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 60px;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  background-image: url(../../static/imgGame/IconBuild.png);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 5px 5px 0px 1px rgba(0, 0, 0, 0.2);
+  transition: transform .3s;
+}
+
+#build:hover {
+  transform: scale(1.05);
+}
+
+#esc{
+  z-index: 11;
+  position: absolute;
+  margin-top: 210px;
+  margin-left: 1320px;
+  border-radius: 60px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-image: url(../../static/imgGame/Esc.png);
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+#menu {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  top: 420px;
+  left:70px;
+  padding: 30px;
+  background: no-repeat 50%/ 50% #e8e8f3;
+  background-image: url(../../static/imgGame/UserIcon/Black.png);
+  border-radius: 100%;
+  cursor: pointer;
+  z-index: 16;
+  box-shadow: 5px 5px 0px 1px rgba(0, 0, 0, 0.2);
+
+
+
+  
+  &::before {
+    transform: rotate(0deg);
+  }
+  &::after {
+    transform: rotate(-90deg);
+  }
+  &.open {
+    opacity: .9;
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+    .button {
+      opacity: 1;
+      pointer-events: auto;
+      &:first-of-type {
+        bottom: 40px;
+        right: 70px;
+        background: url("../../static/imgGame/UserIcon/Red.png") no-repeat 50%/50% #e8e8f3;
+      }
+      &:nth-of-type(2) {
+        bottom: 80px;
+        left:  5px;
+        background: url("../../static/imgGame/UserIcon/DarkBlue.png") no-repeat 50%/ 50% #e8e8f3;
+        transition-delay: .05s;
+      }
+      &:nth-of-type(3) {
+        bottom: 40px;
+        right: -70px;
+        background: url("../../static/imgGame/UserIcon/Green.png") no-repeat 50% 45%/50% 45% #e8e8f3;
+        transition-delay: .1s;
+      }
+      &:nth-of-type(4) {
+        top: 40px;
+        right: -70px;
+        background: url("../../static/imgGame/UserIcon/Orange.png") no-repeat 50% 45%/50% 45% #e8e8f3;
+        transition-delay: .2s;
+      }
+      &:nth-of-type(5) {
+        top: 78px;
+        left:  10px;
+        background: url("../../static/imgGame/UserIcon/Black.png") no-repeat 50% 45%/50% 45% #e8e8f3;
+        transition-delay: .3s;
+      }
+      &:last-of-type {
+        top: 40px;
+        right: 70px;
+        background: url("../../static/imgGame/UserIcon/Violet.png") no-repeat 50% 45%/50% 45% #e8e8f3;
+        transition-delay: .4s;
+      }
+    }
+  }
+}
+
+.button {
+  padding: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #e8e8f3;
+  position: absolute;
+  bottom: 0;
+  z-index: 12;
+  right: 0;
+  opacity: 0;
+  box-shadow: inherit;
+  transition: 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28), 0.2s ease opacity, 0.2s cubic-bezier(.08,.82,.17,1) transform;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
