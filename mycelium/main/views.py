@@ -14,16 +14,14 @@ def game(request):
     return render(request, 'main/Game.html')
 
 def register(request):
-    if request.method =='POST':
+    form = RegisterUserForm() 
+    if request.method == 'POST':
         form = RegisterUserForm(request.POST)
-        print(form)
         if form.is_valid():
             form.save()
-            return redirect('menu')
-        else:
-            form=RegisterUserForm()
-    print(form)
-    return render(request, 'main/form.html', {"form":form})
+            return redirect('go')
+    
+    return render(request, 'main/form.html', {"form": form})
 
 
 
