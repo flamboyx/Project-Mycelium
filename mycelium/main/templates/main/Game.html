@@ -17,32 +17,78 @@
 
 <body>
   <div id="game-board"></div>
-  
+
   <div id="rectangle">
     <div class="cover">
-
-      <button class="left" onclick="leftScroll()">Left</button>
-
       <div class="scroll-images">
 
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-       
+        <div class="child">
+          <img class="shroom" src="{%static 'imgGame/Mushrooms/AgaricMush.png'%}">
+        </div>
+        <div class="child">
+          <img class="shroom" src=".{%static 'imgGame/Mushrooms/AmongMush.png'%}">
+        </div>
+        <div class="child">
+          <img class="shroom" src="{%static 'imgGame/Mushrooms/AgaricMush.png'%}">
+        </div>
+        <div class="child">
+          <img class="shroom" src="{% static 'imgGame/Mushrooms/TiredMush.png'%}">
+        </div>
+        <div class="child">
+          <img class="shroom" src="{% static 'imgGame/Mushrooms/SlimeMush.png'%}">
+        </div>
+        <div class="child">
+          <img class="shroom" src= "{% static 'imgGame/Mushrooms/AndrewMush.png'%}">
+        </div>
+        <div class="child">
+          <img class="shroom" src= "{% static 'imgGame/Mushrooms/TikhonMush.png'%}">
+        </div>
+        <div class="child">
+          <img class="shroom" src= "{% static 'imgGame/Mushrooms/TrollMush.png'%}">
+        </div>
+        <div class="child">
+          <img class="shroom" src= "{% static 'imgGame/Mushrooms/AmongMush.png'%}">
+        </div>
+        <div class="child">
+          <img class="shroom" src= "{% static 'imgGame/Mushrooms/SleepyMush.png'%}">
+        </div>
+        <div class="child">
+          <img class="shroom" src= "{% static 'imgGame/Mushrooms/PikaMush.png'%}">
+        </div>
+        <div class="child">
+          <img class="shroom" src= "{% static 'imgGame/Mushrooms/CatMush.png'%}">
+        </div>
+        <div class="child">
+          <img class="shroom" src= "{% static 'imgGame/Mushrooms/DuckMush.png'%}">       
+        </div>
+
+
       </div>
-
-      <button class="right" onclick="rightScroll()">Right</button>
-
     </div>
+    <div id="esc"></div>
+  </div>
+  
+  <div id="build"></div>
+
+  <div id="currency">
+    <div class="currency-icon">
+  
+      <img src="water-icon.png" alt="Water Icon">
+      <img src="spore-icon.png" alt="Spore Icon">
+    </div>
+    <div class="currency-amount" id="water-amount">0</div>
+   <div class="currency-amount" id="spore-amount">0</div>
+  </div>
+  <div id="nickname">Your nickname</div>
+
+
+  <div id="menu" onclick="this.classList.toggle('open')">
+    <div class="button" onclick="CH1()"></div>
+    <div class="button" onclick="CH2()"></div>
+    <div class="button" onclick="CH3()"></div>
+    <div class="button" onclick="CH4()"></div>
+    <div class="button" onclick="CH5()"></div>
+    <div class="button" onclick="CH6()"></div>
   </div>
   
   <div class="Cave">
