@@ -115,18 +115,6 @@ body {
   transform: scale(1.01);
 }
 
-#WOW{
-  display: none;
-  position: absolute;
-  z-index: 9999;
-  width: 100px;
-  height: 100px;
-  top: 500px;
-  left: 1000px;
-  background-size: cover;
-  background-position: center;
-
-}
 .child img{
   
   object-fit:contain ;
@@ -177,7 +165,7 @@ body {
   pointer-events: none;
 }
 
-#currency{
+#currency {
   z-index: 10;
   position: absolute;
   margin-top: 550px;
@@ -186,24 +174,53 @@ body {
   border: 3px solid rgb(255, 255, 255);
   border-radius: 10px;
   width: 140px;
-  height: 120px;
-  cursor: pointer;
+  height: 100px;
   box-shadow: 5px 5px 0px 1px rgba(0, 0, 0, 0.2);
-  transition: transform .3s;
+  display: grid;
+ grid-template-columns: repeat(2, 45px);
+ grid-template-rows: repeat(2, 45px)
+} 
 
-  align-items: center;
-
+.currency-icon img{
+margin-top:4px;
 }
 
-
-.currency-icon {
-  margin-right: 5px;
+.currency-icon img{
+  object-fit: contain;
+  width: 40px;
+  height: 40px;
 }
 
 .currency-amount {
-  background-color: #f1f1f153;
-  padding: 5px;
+  margin-top: 10px;
+  width: 80px;
+  height: 25px;
+  background-color: rgba(11, 11, 36, 0.325);
   border-radius: 5px;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 4px;
+  padding-bottom: 4px;
+}
+
+#WaterIc{
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+#SporeIc{
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+#water-amount{
+  grid-column:  2 / 2;
+  grid-row:  1 / 2;
+}
+
+#spore-amount{
+  grid-column:  2 / 2;
+  grid-row: 2 / 2;
 }
 
 #nickname{
