@@ -2,28 +2,49 @@ const gameBoard = document.getElementById('game-board');
 var centerX;
 var centerY;
 
-for (let i = 0; i < 48; i++) {
-    const square = document.createElement('div');
-    square.classList.add('square');
-    square.addEventListener('click', () => {
-      const top = getSquareCoordinatesT(square);
-      const left = getSquareCoordinatesL(square);
-      showRectangle();
-      console.log(top);
-      console.log(left);
-      
-      var shroom = document.getElementsByClassName('child');
-                for(var y = 0; y < shroom.length; y++){
-                  shroom[i].addEventListener("click", () => {
-                  var otherElement = document.getElementById("WOW");
-                  otherElement.style.display = "flex";
-                  otherElement.style.left = left + "px";
-                  otherElement.style.top = top + "px";           
-                  });
-              }
-    });
-    gameBoard.appendChild(square);
+class Field {
+  constructor() {
+    for (let i = 0; i < 48; i++) {
+      const square = document.createElement('div');
+      square.classList.add('square');
+      this.squares = document.getElementsByClassName('square');
+      square.addEventListener('click', () => this.selectMush(this.squares[i]));
+      gameBoard.appendChild(square);
+    }
+    this.is_building = false;
+  }
+
+  showField() {
+    var F = document.getElementById("game-board");
+    if(!this.is_building) {
+      this.is_building = true;
+      F.style.display = "flex";
+    } else {
+      this.is_building = false;
+      F.style.display = "none";
+    }
+  }
+    
+  selectMush(square) {
+    showRectangle();
+    var shroom = document.getElementsByClassName('child');
+    for(var i = 0; i < shroom.length; i++) {
+      shroom[i].addEventListener('click', this.placeMush.bind(this, i + 1, square));
+    }
+  }
+
+  placeMush(i, square) {
+    var img=document.createElement('img');
+    img.className = 'img';
+    var src = "../../static/imgGame/Mushrooms/mush" + i + ".png";
+    img.src=src;
+    if(!square.hasChildNodes()) {
+      square.appendChild(img);
+    }
+  }  
 }
+
+var field = new Field;
 
 function getSquareCoordinatesT(square) {
   const rect = square.getBoundingClientRect();
@@ -39,14 +60,9 @@ function getSquareCoordinatesL(square) {
 
 const but = document.getElementById('build');
 but.addEventListener('click', () => {
-  showField();
+  field.showField();
 });
 
-function showField() {
-  var F = document.getElementById("game-board");
-  F.style.display = "flex";
- 
-}
 const cl = document.getElementById('esc');
 cl.addEventListener('click', () => {
   HideRectangle();
